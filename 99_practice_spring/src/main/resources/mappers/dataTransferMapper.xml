@@ -22,5 +22,21 @@
 					PRODUCT_PRICE < 1000000
 		]]>
 	</select>
+	
+	<select id="select3" resultType="hashmap">
+		SELECT
+				PRODUCT_CODE AS productCode,
+				PRODUCT_NAME AS productName,
+				PRODUCT_PRICE AS productPrice,
+				PRODUCT_DELIVERY_PRICE AS productDeliveryPrice
+		FROM
+				T_PRODUCT
+	</select>
+	<resultMap type="ProductDto" id="productInfo">
+		<result column="PRODUCT_CODE" property="productCode"/>
+		<result column="PRODUCT_NAME" property="productName"/>
+		<result column="PRODUCT_PRICE" property="productPrice"/>
+		<result column="PRODUCT_DELIVERY_PRICE" property="productDeliveryPrice"/>
+	</resultMap>
 
 </mapper>

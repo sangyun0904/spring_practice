@@ -18,5 +18,24 @@ public class MapperToDao {
 		dataTransferDao.selectData1();
 		return "home";
 	}
-	
+	@RequestMapping(value="/selectData2" , method=RequestMethod.GET)
+	public String selectData2() {
+		dataTransferDao.selectData2();
+		return "home";
+	}
+	@RequestMapping(value="/selectData3" , method=RequestMethod.GET)
+	public String selectData3() {
+		dataTransferDao.selectData3();
+		return "home";
+	}
+	@RequestMapping(value="/selectData3" , method=RequestMethod.GET)
+	public String selectData4() {
+		//dataTransferDao.selectData4();
+		return "home";
+	}
+	@RequestMapping(value="/selectData3" , method=RequestMethod.GET)
+	public String selectData5() {
+		//dataTransferDao.selectData5();
+		return "home";
+	}
 }

@@ -1,6 +1,7 @@
 package com.spring.practice.dataTransfer.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,22 @@ public class DataTransferDao {
 		for (ProductDto productDto : productList) {
 			System.out.println(productDto);
 		}
+	}
+	
+	public void selectData3() {
+		System.out.println("\n selectData3 \n");
+		
+		List<Map<String, Object>> productList = sqlSession.selectList("dataTransferPrac.select3");
+		
+		for (Map<String, Object> product : productList) {
+			System.out.println(product);
+		}
+	}
+	
+	public void selectData4() {
+		System.out.println("\n selectData4 \n");
+		
+		sqlSession.selectList("dataTransferPrac.select4");
 	}
 	
 }
