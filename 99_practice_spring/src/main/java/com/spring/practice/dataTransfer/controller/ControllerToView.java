@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -91,6 +94,16 @@ public class ControllerToView {
 			
 		return data;
 			
+	}
+	
+	@RequestMapping(value="/responseEntityEx" , method=RequestMethod.GET)
+	public ResponseEntity<Object> responseEntityEx() {
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=UTF-8");
+		String data = "<h1>html페이지를 반환합니다.</h1>";
+		
+		return new ResponseEntity<Object>(data, responseHeaders, HttpStatus.OK);
 	}
 	
 }
